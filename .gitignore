@@ -1,0 +1,11 @@
+# .gitignore
+__pycache__/
+*.pyc
+.venv/
+data/
+outputs/
+logs/
+*.h5
+*.pt
+*.zip
+*.tar.gz

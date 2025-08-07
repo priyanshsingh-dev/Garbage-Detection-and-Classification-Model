@@ -1,0 +1,5 @@
+plt.figure(figsize=(6,8))
+plt.imshow(img)
+plt.title(info["file_name"])
+plt.axis("off")
+plt.show()
