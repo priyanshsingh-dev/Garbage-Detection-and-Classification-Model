@@ -6,7 +6,7 @@ SCRIPT_DIR  = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)                
 
 # 2. Point to your data
-IMG_DIR  = os.path.join(PROJECT_ROOT, "data", "Images")     # note 'Images' folder
+IMG_DIR  = os.path.join(PROJECT_ROOT, "data", "Images")     
 ANN_PATH = os.path.join(PROJECT_ROOT,"data", "annotations_clean.json") 
 
 # load annotations

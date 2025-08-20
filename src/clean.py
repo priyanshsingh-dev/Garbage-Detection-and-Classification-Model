@@ -1,19 +1,19 @@
 import os, json
 import pandas as pd
 
-# —— CONFIG ——————————————————————————————————————————————
+#CONFIG
 PROJECT_DIR   = r"C:\Users\ACER\Desktop\Trash Detection And Classification"
 DATA_DIR      = os.path.join(PROJECT_DIR, "data")
 ANN_IN        = os.path.join(DATA_DIR, "annotations.json")
 ANN_OUT       = os.path.join(PROJECT_DIR, "annotations_clean.json")
 IMG_ROOT      = os.path.join(DATA_DIR, "Images")
 
-MIN_W, MIN_H  = 5, 5        # px
-MIN_AREA      = 100         # px²
+MIN_W, MIN_H  = 5, 5        
+MIN_AREA      = 100         
 MAX_IMG_COVER = 0.90        # 90% of image area
-# ————————————————————————————————————————————————————————
 
-# 1. Load JSON → DataFrames
+
+# 1. Load JSON to DataFrames
 with open(ANN_IN, "r") as f:
     coco = json.load(f)
 
@@ -67,7 +67,7 @@ clean_anns = (
     .to_dict("records")
 )
 
-# 9. (Optional) prune categories with no instances left
+# 9. prune categories with no instances left
 valid_cat_ids = clean_df["category_id"].unique()
 clean_cats = [c for c in coco["categories"] if c["id"] in valid_cat_ids]
 
