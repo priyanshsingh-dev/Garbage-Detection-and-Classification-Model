@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 
 #Load the JSON
-with open("C:/Users/ACER/Desktop/Trash Detection And Classification/data/annotations_clean.json", "r") as f:
+with open("../data/annotations_clean.json", "r") as f:
     coco = json.load(f)
 
 

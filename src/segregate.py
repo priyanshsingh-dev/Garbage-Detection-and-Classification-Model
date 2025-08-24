@@ -1,7 +1,7 @@
 import os, random, shutil
 from pathlib import Path
 
-# —— CONFIG ——————————————————————————————————————————————
+# config
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 SRC_DIR      = PROJECT_ROOT / "data" / "Images"
@@ -23,7 +23,7 @@ for split in ("train","val","test"):
 # 2. Walk each class
 for cls_folder in SRC_DIR.iterdir():
     if not cls_folder.is_dir(): continue
-    images = list(cls_folder.glob("*.*"))       # all files in this class
+    images = list(cls_folder.glob("*.*"))     
     random.shuffle(images)
     n = len(images)
     n_train = int(n * TRAIN_PCT)
@@ -45,4 +45,4 @@ for cls_folder in SRC_DIR.iterdir():
           f"{len(splits['val'])} val, "
           f"{len(splits['test'])} test")
 
-print(f"\nDone! Splits created under {DST_ROOT}")
+print(f"\nDone. Splits created under {DST_ROOT}")

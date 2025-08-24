@@ -1,4 +1,0 @@
-path: data/Images_Split          # root of your image splits
-train: train                     # subfolder under `path`
-val:   val
-test:  test 
